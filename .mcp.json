@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "linkedin": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["D:/silver_tier/linkedin_mcp.py"],
+      "env": {}
+    },
+    "email": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["D:/silver_tier/email_mcp_server.py"],
+      "env": {}
+    }
+  }
+}

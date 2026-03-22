@@ -1,0 +1,38 @@
+2026-03-11 09:02:18,227 [INFO] LinkedIn Scheduler started (type: company)
+2026-03-11 09:02:18,229 [INFO] Recent draft found: LI_CO_20260311_0859_today__we_re_focusing_on_simpl.md (skip generation)
+2026-03-11 09:02:18,229 [INFO] No new company draft needed. Use --force to override.
+
+
+--- Run at 2026-03-11T09:02:17.972975 ---
+2026-03-11 09:04:43,551 [INFO] LinkedIn Scheduler started (type: company)
+2026-03-11 09:04:43,552 [INFO] Recent draft found: LI_CO_20260311_0859_today__we_re_focusing_on_simpl.md (skip generation)
+2026-03-11 09:04:43,552 [INFO] No new company draft needed. Use --force to override.
+
+
+--- Run at 2026-03-11T09:04:43.318781 ---
+2026-03-14 06:54:25,335 [INFO] LinkedIn Scheduler started (type: company)
+2026-03-14 06:54:25,345 [INFO] Recent draft found: LI_CO_20260311_0859_today__we_re_focusing_on_simpl.md (skip generation)
+2026-03-14 06:54:25,345 [INFO] No new company draft needed. Use --force to override.
+
+
+--- Run at 2026-03-14T06:54:24.783234 ---
+2026-03-17 03:29:46,856 [INFO] LinkedIn Scheduler started (type: company)
+2026-03-17 03:29:46,870 [INFO] Calling AI to generate post...
+2026-03-17 03:29:46,870 [INFO] OpenRouter: trying google/gemma-3-4b-it:free...
+2026-03-17 03:29:54,487 [INFO] OpenRouter success: google/gemma-3-4b-it:free
+2026-03-17 03:29:54,487 [INFO] Post generated (1187 chars)
+2026-03-17 03:29:54,495 [INFO] Draft saved:   silver_tier\LinkedIn_Drafts\LI_CO_20260317_0329_did_you_know_automating_just_2.md
+2026-03-17 03:29:54,496 [INFO] Pending:       silver_tier\Pending_Approval\LI_CO_20260317_0329_did_you_know_automating_just_2.md
+2026-03-17 03:29:54,521 [INFO] Dashboard updated with new draft.
+
+--- LinkedIn company post draft generated ---
+  Draft:   silver_tier\LinkedIn_Drafts\LI_CO_20260317_0329_did_you_know_automating_just_2.md
+  Pending: silver_tier\Pending_Approval\LI_CO_20260317_0329_did_you_know_automating_just_2.md
+  Chars:   1187/1300
+
+Review in Obsidian then run: /approval-handler
+-------------------------------------
+
+
+
+--- Run at 2026-03-17T03:29:45.285541 ---

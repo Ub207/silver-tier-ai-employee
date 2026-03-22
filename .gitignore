@@ -1,0 +1,27 @@
+# ============================================================
+# SECURITY: OAuth credentials — NEVER commit these
+# ============================================================
+credentials.json
+token.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment files
+.env
+*.env
+
+# Browser sessions (contain auth cookies -- never commit)
+silver_tier/whatsapp_session/
+silver_tier/linkedin_session/
+whatsapp_session/
+linkedin_session/
+
+# Seen-IDs dedup cache
+.wa_seen_ids.json
+
+# OS noise
+.DS_Store
+Thumbs.db

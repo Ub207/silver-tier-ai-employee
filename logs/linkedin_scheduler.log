@@ -1,0 +1,208 @@
+2026-03-07 08:28:11,316 [INFO] LinkedIn Scheduler started
+2026-03-07 08:28:11,316 [INFO] Recent draft found: LI_CO_20260304_1430_5_tasks_we_automate.md (skip generation)
+2026-03-07 08:28:11,316 [INFO] No new draft needed. Use --force to override.
+
+
+--- Run at 2026-03-07T08:28:09.048230 ---
+2026-03-07 09:08:15,317 [INFO] LinkedIn Scheduler started
+2026-03-07 09:08:15,317 [INFO] Recent draft found: LI_CO_20260304_1430_5_tasks_we_automate.md (skip generation)
+2026-03-07 09:08:15,317 [INFO] No new draft needed. Use --force to override.
+
+
+--- Run at 2026-03-07T09:08:14.671985 ---
+2026-03-07 10:04:13,696 [INFO] LinkedIn Scheduler started
+2026-03-07 10:04:13,696 [INFO] Recent draft found: LI_CO_20260304_1430_5_tasks_we_automate.md (skip generation)
+2026-03-07 10:04:13,697 [INFO] No new draft needed. Use --force to override.
+
+
+--- Run at 2026-03-07T10:04:12.816854 ---
+2026-03-07 10:09:31,970 [INFO] LinkedIn Scheduler started
+2026-03-07 10:09:31,971 [INFO] Recent draft found: LI_CO_20260304_1430_5_tasks_we_automate.md (skip generation)
+2026-03-07 10:09:31,971 [INFO] No new draft needed. Use --force to override.
+
+
+--- Run at 2026-03-07T10:09:30.654767 ---
+2026-03-07 15:02:14,549 [INFO] LinkedIn Scheduler started
+2026-03-07 15:02:14,567 [INFO] Recent draft found: LI_CO_20260304_1430_5_tasks_we_automate.md (skip generation)
+2026-03-07 15:02:14,568 [INFO] No new draft needed. Use --force to override.
+2026-03-07 15:10:52,175 [INFO] LinkedIn Scheduler started
+2026-03-07 15:10:52,175 [INFO] Recent draft found: LI_CO_20260304_1430_5_tasks_we_automate.md (skip generation)
+2026-03-07 15:10:52,176 [INFO] No new draft needed. Use --force to override.
+2026-03-07 15:14:36,501 [INFO] LinkedIn Scheduler started
+2026-03-07 15:14:36,501 [INFO] Recent draft found: LI_CO_20260304_1430_5_tasks_we_automate.md (skip generation)
+2026-03-07 15:14:36,501 [INFO] No new draft needed. Use --force to override.
+2026-03-07 15:18:12,409 [INFO] LinkedIn Scheduler started
+2026-03-07 15:18:12,409 [INFO] Recent draft found: LI_CO_20260304_1430_5_tasks_we_automate.md (skip generation)
+2026-03-07 15:18:12,409 [INFO] No new draft needed. Use --force to override.
+2026-03-07 15:23:42,355 [INFO] LinkedIn Scheduler started
+2026-03-07 15:23:42,356 [INFO] Recent draft found: LI_CO_20260304_1430_5_tasks_we_automate.md (skip generation)
+2026-03-07 15:23:42,356 [INFO] No new draft needed. Use --force to override.
+
+
+--- Run at 2026-03-07T15:23:41.621303 ---
+2026-03-09 07:56:25,749 [INFO] LinkedIn Scheduler started
+2026-03-09 07:56:25,751 [ERROR] ANTHROPIC_API_KEY not set. Add it to your .env file.
+2026-03-09 07:56:25,752 [ERROR]   echo ANTHROPIC_API_KEY=sk-ant-... >> .env
+
+
+--- Run at 2026-03-09T07:56:25.446980 ---
+2026-03-09 23:17:08,294 [INFO] LinkedIn Scheduler started
+2026-03-09 23:17:08,315 [INFO] Calling Claude API (model: claude-haiku-4-5-20251001)...
+2026-03-09 23:17:16,141 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-09 23:17:16,146 [ERROR] Claude API call failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYsxvhPmRLUmuMGWbgcVQ'}
+Traceback (most recent call last):
+  File "D:\silver_tier\linkedin_scheduler.py", line 279, in <module>
+    main()
+  File "D:\silver_tier\linkedin_scheduler.py", line 256, in main
+    post_text = _call_claude(prompt, api_key)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\silver_tier\linkedin_scheduler.py", line 132, in _call_claude
+    message = client.messages.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\physical-ai and huminiod-robotics\rag-chatbot\venv\Lib\site-packages\anthropic\_utils\_utils.py", line 282, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\physical-ai and huminiod-robotics\rag-chatbot\venv\Lib\site-packages\anthropic\resources\messages\messages.py", line 996, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\physical-ai and huminiod-robotics\rag-chatbot\venv\Lib\site-packages\anthropic\_base_client.py", line 1364, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\physical-ai and huminiod-robotics\rag-chatbot\venv\Lib\site-packages\anthropic\_base_client.py", line 1137, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYsxvhPmRLUmuMGWbgcVQ'}
+
+
+--- Run at 2026-03-09T23:17:08.048015 ---
+2026-03-10 15:08:04,504 [INFO] LinkedIn Scheduler started
+2026-03-10 15:08:04,538 [INFO] Calling Claude API (model: claude-haiku-4-5-20251001)...
+2026-03-10 15:08:14,272 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-10 15:08:14,285 [WARNING] Claude API failed (Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYuDSjm7ta63MZVZ3qniq'}) — trying Ollama fallback...
+2026-03-10 15:08:14,285 [INFO] Using Ollama (llama3.2) for generation...
+2026-03-10 15:08:22,834 [ERROR] Ollama also failed: HTTP Error 500: Internal Server Error
+Traceback (most recent call last):
+  File "D:\silver_tier\linkedin_scheduler.py", line 163, in _call_claude
+    return _call_ollama(prompt)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\silver_tier\linkedin_scheduler.py", line 140, in _call_ollama
+    with urllib.request.urlopen(req, timeout=60) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 500: Internal Server Error
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\silver_tier\linkedin_scheduler.py", line 305, in <module>
+    main()
+  File "D:\silver_tier\linkedin_scheduler.py", line 282, in main
+    post_text = _call_claude(prompt, api_key)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\silver_tier\linkedin_scheduler.py", line 166, in _call_claude
+    raise RuntimeError("Both Claude API and Ollama unavailable.") from e
+RuntimeError: Both Claude API and Ollama unavailable.
+
+
+--- Run at 2026-03-10T15:08:02.717721 ---
+2026-03-11 00:02:32,371 [INFO] LinkedIn Scheduler started
+2026-03-11 00:02:32,388 [INFO] Calling Claude API (model: claude-haiku-4-5-20251001)...
+2026-03-11 00:02:59,025 [INFO] Retrying request to /v1/messages in 0.387035 seconds
+2026-03-11 00:03:20,444 [INFO] Retrying request to /v1/messages in 0.912217 seconds
+2026-03-11 00:03:42,409 [WARNING] Claude API failed (Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.) — trying Ollama fallback...
+2026-03-11 00:03:42,411 [INFO] Using Ollama (llama3.2) for generation...
+2026-03-11 00:04:44,450 [ERROR] Ollama also failed: timed out
+Traceback (most recent call last):
+  File "D:\silver_tier\linkedin_scheduler.py", line 163, in _call_claude
+    return _call_ollama(prompt)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\silver_tier\linkedin_scheduler.py", line 140, in _call_ollama
+    with urllib.request.urlopen(req, timeout=60) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 1377, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 1352, in do_open
+    r = h.getresponse()
+        ^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1395, in getresponse
+    response.begin()
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 325, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 286, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python311\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\silver_tier\linkedin_scheduler.py", line 305, in <module>
+    main()
+  File "D:\silver_tier\linkedin_scheduler.py", line 282, in main
+    post_text = _call_claude(prompt, api_key)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\silver_tier\linkedin_scheduler.py", line 166, in _call_claude
+    raise RuntimeError("Both Claude API and Ollama unavailable.") from e
+RuntimeError: Both Claude API and Ollama unavailable.
+
+
+--- Run at 2026-03-11T00:02:32.159969 ---
+2026-03-11 00:08:18,131 [INFO] LinkedIn Scheduler started
+2026-03-11 00:08:18,136 [INFO] Calling Claude API (model: claude-haiku-4-5-20251001)...
+2026-03-11 00:08:26,126 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-11 00:08:26,129 [WARNING] Claude API failed (Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYuvdkHwfMmnhmhsnvB4x'}) — trying Ollama fallback...
+2026-03-11 00:08:26,130 [INFO] Using Ollama (llama3.2) for generation...
+2026-03-11 00:09:26,621 [INFO] Post generated (833 chars)
+2026-03-11 00:09:26,624 [INFO] Draft saved:   silver_tier\LinkedIn_Drafts\LI_20260311_0009_did_you_know_solo_founders_was.md
+2026-03-11 00:09:26,624 [INFO] Pending:       silver_tier\Pending_Approval\LI_20260311_0009_did_you_know_solo_founders_was.md
+2026-03-11 00:09:26,643 [INFO] Dashboard updated with new draft.
+
+--- LinkedIn post draft generated ---
+  Draft:   silver_tier\LinkedIn_Drafts\LI_20260311_0009_did_you_know_solo_founders_was.md
+  Pending: silver_tier\Pending_Approval\LI_20260311_0009_did_you_know_solo_founders_was.md
+  Chars:   833/1300
+
+Review in Obsidian then run: /approval-handler
+-------------------------------------
+
+
+
+--- Run at 2026-03-11T00:08:17.091882 ---
+2026-03-11 00:11:15,987 [INFO] LinkedIn Scheduler started
+2026-03-11 00:11:15,988 [INFO] Recent draft found: LI_20260311_0009_did_you_know_solo_founders_was.md (skip generation)
+2026-03-11 00:11:15,989 [INFO] No new draft needed. Use --force to override.
+
+
+--- Run at 2026-03-11T00:11:15.091862 ---

@@ -1,0 +1,38 @@
+2026-03-11 09:02:17,939 [INFO] LinkedIn Scheduler started (type: personal)
+2026-03-11 09:02:17,939 [INFO] Recent draft found: LI_PERSONAL_20260311_0723_here_s_your_ai_driven_linkedin.md (skip generation)
+2026-03-11 09:02:17,943 [INFO] No new personal draft needed. Use --force to override.
+
+
+--- Run at 2026-03-11T09:02:17.701064 ---
+2026-03-11 09:04:43,287 [INFO] LinkedIn Scheduler started (type: personal)
+2026-03-11 09:04:43,288 [INFO] Recent draft found: LI_PERSONAL_20260311_0723_here_s_your_ai_driven_linkedin.md (skip generation)
+2026-03-11 09:04:43,288 [INFO] No new personal draft needed. Use --force to override.
+
+
+--- Run at 2026-03-11T09:04:43.027794 ---
+2026-03-14 06:54:24,642 [INFO] LinkedIn Scheduler started (type: personal)
+2026-03-14 06:54:24,654 [INFO] Recent draft found: LI_PERSONAL_20260311_0723_here_s_your_ai_driven_linkedin.md (skip generation)
+2026-03-14 06:54:24,654 [INFO] No new personal draft needed. Use --force to override.
+
+
+--- Run at 2026-03-14T06:54:24.113179 ---
+2026-03-17 03:29:33,341 [INFO] LinkedIn Scheduler started (type: personal)
+2026-03-17 03:29:33,373 [INFO] Calling AI to generate post...
+2026-03-17 03:29:33,373 [INFO] OpenRouter: trying google/gemma-3-4b-it:free...
+2026-03-17 03:29:44,310 [INFO] OpenRouter success: google/gemma-3-4b-it:free
+2026-03-17 03:29:44,310 [INFO] Post generated (1098 chars)
+2026-03-17 03:29:44,314 [INFO] Draft saved:   silver_tier\LinkedIn_Drafts\LI_PERSONAL_20260317_0329_did_you_know_most_founders_was.md
+2026-03-17 03:29:44,315 [INFO] Pending:       silver_tier\Pending_Approval\LI_PERSONAL_20260317_0329_did_you_know_most_founders_was.md
+2026-03-17 03:29:44,355 [INFO] Dashboard updated with new draft.
+
+--- LinkedIn personal post draft generated ---
+  Draft:   silver_tier\LinkedIn_Drafts\LI_PERSONAL_20260317_0329_did_you_know_most_founders_was.md
+  Pending: silver_tier\Pending_Approval\LI_PERSONAL_20260317_0329_did_you_know_most_founders_was.md
+  Chars:   1098/1300
+
+Review in Obsidian then run: /approval-handler
+-------------------------------------
+
+
+
+--- Run at 2026-03-17T03:29:21.385193 ---

@@ -1,0 +1,40 @@
+# Business Goals
+
+## Current Quarter Focus (Q1 2026)
+
+### Primary Goals
+- [ ] Land 3 new consulting clients via LinkedIn outreach
+- [ ] Establish thought leadership in AI automation space
+- [ ] Close pending invoice follow-ups (WhatsApp + email)
+- [ ] Grow LinkedIn following by 500 connections
+
+### Core Value Proposition
+We build AI-powered automation systems that save founders 10+ hours/week.
+No-code tools for solopreneurs, Python pipelines for teams.
+
+### Target Audience
+- Solo founders overwhelmed by admin work
+- Small agency owners (5–20 people)
+- Tech-curious non-technical business owners
+
+### Content Pillars (LinkedIn)
+1. **AI Automation** — practical tutorials, before/after results
+2. **Founder Productivity** — systems, SOPs, delegation
+3. **Client Case Studies** — anonymised wins and lessons
+
+### Tone of Voice
+- Direct, no fluff
+- Teach something useful in every post
+- Honest about limitations (no hype)
+
+### Active Offers
+- Silver Tier AI Employee Setup — ₹X / $X
+- Monthly retainer: AI system maintenance — ₹X / $X
+
+### KPIs
+| Metric | Target | Current |
+|--------|--------|---------|
+| LinkedIn impressions/week | 5,000 | — |
+| New leads/month | 10 | — |
+| WhatsApp reply time | < 2 hrs | — |
+| Pending invoices cleared | 100% | — |

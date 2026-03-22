@@ -1,0 +1,52 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip:*)",
+      "Bash(python:*)",
+      "Bash(npm:*)",
+      "Bash(pm2:*)",
+      "Bash(node:*)",
+      "Bash(pm2 start:*)",
+      "Bash(pm2 save:*)",
+      "Bash(schtasks:*)",
+      "Bash(ls:*)",
+      "Bash(\"D:/silver_tier/silver_tier/Needs_Action/WA_20260304_001.md\":*)",
+      "Bash(\"D:/silver_tier/silver_tier/Needs_Action/WA_20260304_002.md\":*)",
+      "Bash(mkdir:*)",
+      "Bash(rm:*)",
+      "Bash(find:*)",
+      "Bash(taskkill:*)",
+      "Bash(grep:*)",
+      "Bash(do:*)",
+      "Bash(uv run:*)",
+      "Bash(/tmp/test_approved_email.md:*)",
+      "Bash(done)",
+      "Bash(start cmd:*)",
+      "Bash(powershell:*)",
+      "Bash(tasklist:*)",
+      "Bash(wmic process:*)",
+      "Bash(cmd:*)",
+      "Bash(ollama pull:*)",
+      "Bash(tail:*)",
+      "Bash(cmd.exe:*)",
+      "Bash(rmdir /s /q \"D:\\\\silver_tier\\\\silver_tier\\\\whatsapp_session\" && mkdir \"D:\\\\silver_tier\\\\silver_tier\\\\whatsapp_session\" && echo \"Session cleared successfully\")",
+      "Bash(rm -rf \"D:/silver_tier/silver_tier/whatsapp_session\" && mkdir -p \"D:/silver_tier/silver_tier/whatsapp_session\" && echo \"Session cleared\")",
+      "Bash(taskkill /F /IM chrome.exe /T 2>/dev/null; taskkill /F /IM chromium.exe /T 2>/dev/null; pkill -f whatsapp_watcher 2>/dev/null; pkill -f chromium 2>/dev/null; echo \"Done\")",
+      "Bash(sleep 2 && rm -rf \"D:/silver_tier/silver_tier/whatsapp_session\" && mkdir -p \"D:/silver_tier/silver_tier/whatsapp_session\" && echo \"Session cleared successfully\")",
+      "Bash(curl -s \"https://openrouter.ai/api/v1/models\" -H \"Authorization: Bearer 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\" | python -c \"import json,sys; models=[m['id'] for m in json.load\\(sys.stdin\\)['data'] if ':free' in m['id']]; print\\('\\\\n'.join\\(sorted\\(models\\)\\)\\)\" 2>&1)",
+      "Bash(cd D:/silver_tier && python -c \"\nimport subprocess\nfrom pathlib import Path\ntext = 'Test LinkedIn post - clipboard kaam kar raha hai!'\ntmp = Path\\('_clipboard_tmp.txt'\\)\ntmp.write_text\\(text, encoding='utf-8'\\)\nsubprocess.run\\(['powershell', '-Command', f\\\\\"Get-Content '{tmp}' -Raw | Set-Clipboard\\\\\"], check=True, capture_output=True, timeout=10\\)\ntmp.unlink\\(\\)\nprint\\('Clipboard mein copy ho gaya! Ctrl+V se check karo.'\\)\n\" 2>&1)",
+      "Bash(ollama list:*)",
+      "Bash(curl -s http://localhost:11434/api/generate -d '{\"model\":\"llama3.2\",\"prompt\":\"Hello\",\"stream\":false}' 2>&1 | head -100)",
+      "Bash(grep -l \"status: pending\\\\|status: awaiting_approval\" D:/silver_tier/silver_tier/Needs_Action/WA_*.md | head -5 | xargs -I{} grep \"status:\" {} | head -10)",
+      "Bash(cd D:/silver_tier/silver_tier && for f in \\\\\n  Approved/LI_PERSONAL_20260311_0745_did_you_know_most_founders_was.md \\\\\n  Approved/LI_PERSONAL_20260311_0745_today__you_wonder_how_i_built_.md \\\\\n  Approved/LI_PERSONAL_20260311_0746_did_you_know_most_founders_was.md \\\\\n  Approved/LI_PERSONAL_20260311_0746_land_3_clients_this_quarter_is.md \\\\\n  Approved/LI_PERSONAL_20260311_0750_did_you_know_most_founders_was.md \\\\\n  Approved/LI_PERSONAL_20260311_0755_today__i_remind_myself_that_ai.md \\\\\n  Approved/LI_PERSONAL_20260311_0758_did_you_know_most_founders_was.md; do\n  mv \"$f\" \"LinkedIn_Drafts/\" && echo \"moved $f\"\ndone)",
+      "Bash(for f:*)",
+      "Read(//d/silver_tier/**)",
+      "Bash(cd:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "linkedin",
+    "email"
+  ]
+}
