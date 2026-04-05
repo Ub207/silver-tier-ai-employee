@@ -1,0 +1,53 @@
+# ============================================================
+# SECURITY: OAuth credentials — NEVER commit these
+# ============================================================
+credentials.json
+token.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment files
+.env
+*.env
+
+# Browser sessions (contain auth cookies -- never commit)
+silver_tier/whatsapp_session/
+silver_tier/linkedin_session/
+whatsapp_session/
+linkedin_session/
+
+# Seen-IDs / dedup caches
+.wa_seen_ids.json
+.auto_approver_seen.json
+.executor_seen_ids.json
+.gmail_seen_ids.json
+.inbox_seen_ids.json
+
+# Runtime / debug files
+*.pid
+wa_debug.png
+wa_debug_html.txt
+
+# Log files (generated at runtime)
+logs/
+
+# Vault generated content — too large for git, created at runtime
+silver_tier/Needs_Action/EMAIL_*.md
+silver_tier/Needs_Action/WA_*.md
+silver_tier/Plans/PLAN_*.md
+silver_tier/Plans/Archive/
+silver_tier/Done/EMAIL_*.md
+silver_tier/Done/Archived_Emails/
+silver_tier/Approved/_tmp_*
+silver_tier/whatsapp_session/
+silver_tier/linkedin_session/
+silver_tier/skills-lock.json
+wa_session/
+
+# OS noise
+.DS_Store
+Thumbs.db
+Thumbs.db:encryptable

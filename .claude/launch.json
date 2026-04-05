@@ -1,0 +1,77 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Full Stack (All Watchers + Loops)",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["run_all.py"],
+      "port": 0
+    },
+    {
+      "name": "Full Auto Mode (Simpler All-in-One)",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["full_auto_mode.py"],
+      "port": 0
+    },
+    {
+      "name": "Workflow Runner (Process Needs_Action Once)",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["workflow_runner.py"],
+      "port": 0
+    },
+    {
+      "name": "Gmail Watcher",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["gmail_watcher.py", "--vault", "silver_tier"],
+      "port": 0
+    },
+    {
+      "name": "WhatsApp Watcher",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["whatsapp_watcher.py", "--vault", "silver_tier", "--interval", "180"],
+      "port": 0
+    },
+    {
+      "name": "Filesystem Watcher",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["filesystem_watcher.py", "--vault", "silver_tier"],
+      "port": 0
+    },
+    {
+      "name": "Auto Approver",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["auto_approver.py"],
+      "port": 0
+    },
+    {
+      "name": "Approval Executor",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["approval_executor.py"],
+      "port": 0
+    },
+    {
+      "name": "LinkedIn Scheduler (Daily Posts)",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["linkedin_scheduler.py"],
+      "port": 0
+    },
+    {
+      "name": "Email MCP Server",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["email_mcp_server.py"],
+      "port": 587
+    },
+    {
+      "name": "LinkedIn MCP Server",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["linkedin_mcp.py"],
+      "port": 0
+    },
+    {
+      "name": "PM2 Ecosystem (All Watchers via PM2)",
+      "runtimeExecutable": "pm2",
+      "runtimeArgs": ["start", "ecosystem.config.js"],
+      "port": 0
+    }
+  ]
+}
