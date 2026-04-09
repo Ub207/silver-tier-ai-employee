@@ -318,7 +318,34 @@ Focus on: overall momentum, biggest bottleneck, and one specific action to take 
             )
             return resp.content[0].text.strip()
         except Exception as e:
-            print(f"  [AI] Anthropic unavailable ({e})")
+            print(f"  [AI] Anthropic unavailable ({e}), trying OpenRouter...")
+
+    # Try OpenRouter (free models)
+    or_key = os.environ.get("OPENROUTER_API_KEY", "")
+    or_model = os.environ.get("OPENROUTER_MODEL", "google/gemma-3-4b-it:free")
+    if or_key:
+        try:
+            import urllib.request
+            import json
+            payload = json.dumps({
+                "model": or_model,
+                "messages": [{"role": "user", "content": prompt}],
+                "max_tokens": 200,
+            }).encode()
+            req = urllib.request.Request(
+                "https://openrouter.ai/api/v1/chat/completions",
+                data=payload,
+                headers={
+                    "Content-Type": "application/json",
+                    "Authorization": f"Bearer {or_key}",
+                    "HTTP-Referer": "https://silver-tier.local",
+                }
+            )
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                result = json.loads(resp.read())
+                return result["choices"][0]["message"]["content"].strip()
+        except Exception as e:
+            print(f"  [AI] OpenRouter unavailable ({e})")
 
     return "AI summary unavailable — review metrics below manually."
 

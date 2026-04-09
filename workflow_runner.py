@@ -264,10 +264,86 @@ def _reasoning_loop(item_type: str, sender: str, content: str) -> dict:
 
     # Try Anthropic
     api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    if api_key:
+        try:
+            import anthropic
+            client = anthropic.Anthropic(api_key=api_key)
+            # quick test — will raise if key invalid
+            client.models.list()
+        except Exception as e:
+            print(f"    [AI] Anthropic key invalid ({e}) — trying OpenRouter...")
+            api_key = ""
+
+    # Try OpenRouter if Anthropic unavailable
     if not api_key:
-        print(f"    [AI] No API key — using static defaults")
+        or_key = os.environ.get("OPENROUTER_API_KEY", "")
+        or_model = os.environ.get("OPENROUTER_MODEL", "google/gemma-3-4b-it:free")
+        if or_key:
+            print(f"    [AI] Using OpenRouter ({or_model})...")
+            try:
+                import urllib.request as _ureq
+                import json as _json
+
+                def _or_chat(prompt_text: str, max_tok: int) -> str:
+                    payload = _json.dumps({
+                        "model": or_model,
+                        "messages": [{"role": "user", "content": prompt_text}],
+                        "max_tokens": max_tok,
+                    }).encode()
+                    req = _ureq.Request(
+                        "https://openrouter.ai/api/v1/chat/completions",
+                        data=payload,
+                        headers={
+                            "Content-Type": "application/json",
+                            "Authorization": f"Bearer {or_key}",
+                            "HTTP-Referer": "https://silver-tier.local",
+                        }
+                    )
+                    with _ureq.urlopen(req, timeout=60) as r:
+                        return _json.loads(r.read())["choices"][0]["message"]["content"].strip()
+
+                analysis_resp = _or_chat(
+                    f"""You are an AI business assistant.\nAnalyze this {item_type} message:\nFROM: {sender}\nMESSAGE:\n{content[:1500]}\n\nAnswer (1-2 sentences each):\n1. NEED: What does this person need?\n2. URGENCY: (low/medium/high/critical) and why?\n3. CATEGORY: (inquiry/complaint/invoice/followup/spam/social/other)\n4. RISK: What if no response within 2 hours?""",
+                    400
+                )
+                print(f"    [LOOP-1] OpenRouter analysis done.")
+
+                plan_resp = _or_chat(
+                    f"""Based on this analysis of a {item_type} from {sender}:\n{analysis_resp}\n\nCreate action plan in EXACTLY this format:\nSTEP_1: [action]\nSTEP_2: [action]\nSTEP_3: [action]\nSTEP_4: [action]\nSTEP_5: [action]\nPRIORITY: [low/medium/high/critical]\nREQUIRES_APPROVAL: [yes/no]\nESTIMATED_TIME: [e.g. 5 minutes]\nSUCCESS_CRITERIA: [one line]""",
+                    500
+                )
+                print(f"    [LOOP-2] OpenRouter plan done.")
+
+                steps, priority, requires_approval = [], "medium", True
+                estimated_time, success_criteria = "5-10 minutes", "Response sent and confirmed"
+                for line in plan_resp.splitlines():
+                    line = line.strip()
+                    if re.match(r"STEP_\d+:", line, re.IGNORECASE):
+                        steps.append(line.split(":", 1)[1].strip())
+                    elif line.upper().startswith("PRIORITY:"):
+                        priority = line.split(":", 1)[1].strip().lower()
+                    elif line.upper().startswith("REQUIRES_APPROVAL:"):
+                        requires_approval = "yes" in line.lower()
+                    elif line.upper().startswith("ESTIMATED_TIME:"):
+                        estimated_time = line.split(":", 1)[1].strip()
+                    elif line.upper().startswith("SUCCESS_CRITERIA:"):
+                        success_criteria = line.split(":", 1)[1].strip()
+                if not steps:
+                    steps = ["Review message", "Draft response", "Get approval", "Send reply"]
+                return {
+                    "analysis": analysis_resp,
+                    "plan_steps": steps,
+                    "priority": priority,
+                    "requires_approval": requires_approval,
+                    "estimated_time": estimated_time,
+                    "success_criteria": success_criteria,
+                }
+            except Exception as e:
+                print(f"    [AI] OpenRouter failed ({e}) — using static defaults")
+
+        print(f"    [AI] No working AI provider — using static defaults")
         return {
-            "analysis": "API key not set — manual review needed.",
+            "analysis": "AI unavailable — manual review needed.",
             "plan_steps": ["Review message manually", "Draft response", "Send after approval"],
             "priority": "medium",
             "requires_approval": True,
@@ -813,7 +889,7 @@ def update_dashboard(results: list[dict]):
 
     # LinkedIn personal drafts
     for lf in LI_DRAFTS.glob("LI_*.md"):
-        li_rows.append(f"| {lf.name} | — | Draft | {lf.stat().st_mtime:.0f} |")
+        li_rows.append(f"| {lf.name} | — | Draft | {datetime.fromtimestamp(lf.stat().st_mtime).strftime('%Y-%m-%d %H:%M')} |")
 
     # LinkedIn company posts — scan LI_CO_* across drafts + pending + approved
     li_co_rows = []
